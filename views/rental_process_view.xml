@@ -1,0 +1,62 @@
+<odoo>
+    <record id="new_field_value" model="ir.sequence">
+        <field name="name">new field value</field>
+        <field name="code">new_field_value</field>
+        <field name="prefix"></field>
+        <field name="padding">3</field>
+        <field name="company_id" eval="False"/>
+    </record>
+
+    <record id="rental_process_model_action" model="ir.actions.act_window">
+        <field name="name">rental process</field>
+        <field name="res_model">rental_process</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="rental_process_view_tree" model="ir.ui.view">
+        <field name="name">rental.process.view.tree</field>
+        <field name="model">rental_process</field>
+        <field name="arch" type="xml">
+            <tree string="Channel">
+                <field name="process_number"/>
+                <field name="renter_id"/>
+                <field name="date_from"/>
+                <field name="date_to"/>
+                <field name="is_received"/>
+                <field name="is_returned"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="rental_process_view_form" model="ir.ui.view">
+        <field name="name">rental.process.view.form</field>
+        <field name="model">rental_process</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group col="2">
+                        <group colspan="2" >
+                            <h1><field name="process_number"/></h1>
+                        </group>
+                        <group>
+                            <field name="renter_id"/>
+                            <field name="date_from"/>
+                            <field name="date_to"/>
+                        </group>
+                        <group>
+                            <field name="is_received"/>
+                            <field name="is_returned"/>
+                        </group>
+                        <notebook colspan="2">
+                            <page string="equipments">
+                                <field name="rental_process_details_ids"/>
+                            </page>
+                        </notebook>
+                    </group>
+                </sheet>
+
+            </form>
+        </field>
+    </record>
+
+</odoo>

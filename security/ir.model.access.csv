@@ -1,0 +1,4 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+equipment_model_allow_access,equipment_model_allow_access,model_equipment_property,base.group_user,1,1,1,1
+rental_process_model_allow_access,rental_process_model_allow_access,model_rental_process,base.group_user,1,1,1,1
+rental_process_details_model_allow_access,rental_process_details_model_allow_access,model_rental_process_details,base.group_user,1,1,1,1

@@ -1,0 +1,6 @@
+<odoo>
+    <menuitem id="Rental_menu" name="Rental">
+        <menuitem id="equipment_property_menu_action" action="equipment_property_model_action" name="Equipment"/>
+        <menuitem id="rental_process_menu_action" action="rental_process_model_action" name="Applications"/>
+    </menuitem>
+</odoo>

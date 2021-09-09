@@ -1,0 +1,26 @@
+<odoo>
+    <record id="rental_process_details_model_action" model="ir.actions.act_window">
+        <field name="name">rental process details</field>
+        <field name="res_model">rental_process_details</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <record id="rental_process_details_view_tree" model="ir.ui.view">
+        <field name="name">rental.process.details.view.tree</field>
+        <field name="model">rental_process_details</field>
+        <field name="arch" type="xml">
+            <tree string="Channel" editable="bottom">
+                <field name="equipment_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="rental_process_details_view_form" model="ir.ui.view">
+        <field name="name">rental.process.details.view.form</field>
+        <field name="model">rental_process_details</field>
+        <field name="arch" type="xml">
+            <form >
+                <field name="equipment_id"/>
+            </form>
+        </field>
+    </record>
+</odoo>

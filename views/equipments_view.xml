@@ -1,0 +1,71 @@
+<odoo>
+    <record id="equipment_property_model_action" model="ir.actions.act_window">
+        <field name="name">equipment property</field>
+        <field name="res_model">equipment_property</field>
+        <field name="view_mode">tree,form,calendar</field>
+    </record>
+
+    <record id="equipment_property_view_tree" model="ir.ui.view">
+        <field name="name">equipment.property.view.tree</field>
+        <field name="model">equipment_property</field>
+        <field name="arch" type="xml">
+            <tree string="Channel" decoration-success="state=='available'"
+            decoration-danger="state=='late'" decoration-info="state=='rented'" >
+                <field name="name"/>
+                <field name="equipment_number"/>
+                <field name="equipment_description"/>
+                <field name="state"/>
+                <field name="renter_id"/>
+                <field name="return_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="equipment_property_view_form" model="ir.ui.view">
+        <field name="name">equipment.property.view.form</field>
+        <field name="model">equipment_property</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="equipment_number"/>
+                        <field name="equipment_description"/>
+                        <field name="state"/>
+                        <field name="renter_id"/>
+                        <field name="return_date"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="equipment_property_view_calendar" model="ir.ui.view">
+        <field name="name">equipment.property.view.calendar</field>
+        <field name="model">equipment_property</field>
+        <field name="arch" type="xml">
+            <calendar string="equipment" date_start="date_from" date_stop="return_date" color="name">
+                <field name="name"/>
+            </calendar>
+        </field>
+    </record>
+
+
+    <record id="equipment_property_view_search" model="ir.ui.view">
+        <field name="name">equipment.property.view.search</field>
+        <field name="model">equipment_property</field>
+        <field name="arch" type="xml">
+            <search string="search string">
+                <field name="name" />
+                <filter string="Available" name="available" domain="[('StoredState','=','available')]"/>
+                <filter string="Rented" name="rented" domain="[('StoredState','=','rented')]"/>
+                <filter string="Late" name="late" domain="[('StoredState','=','late')]"/>
+            </search>
+        </field>
+    </record>
+
+
+
+</odoo>
+
+
